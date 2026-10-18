@@ -1,7 +1,11 @@
 
 name: Build Android APK
 
-run:|exportVITE_NETEASE_API_BASE=https://api-enhanced-alpha-blush.vercel.appnpmruncap:sync:androidcdandroidchmod+x gradlew./gradlewassembleDebug
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -30,6 +34,7 @@ jobs:
 
       - name: Build Android debug APK
         run: |
+          export VITE_NETEASE_API_BASE=https://api-enhanced-alpha-blush.vercel.app
           npm run cap:sync:android
           cd android
           chmod +x gradlew
