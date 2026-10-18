@@ -1,11 +1,7 @@
 
 name: Build Android APK
 
-'on':
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+run:|exportVITE_NETEASE_API_BASE=https://api-enhanced-alpha-blush.vercel.appnpmruncap:sync:androidcdandroidchmod+x gradlew./gradlewassembleDebug
 
 permissions:
   contents: read
